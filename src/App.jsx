@@ -1,5 +1,29 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AnimePage from "./pages/AnimePage";
+import CharactersPage from "./pages/CharactersPage";
+import FavoritesPage from "./pages/FavoritesPage";
+import LibraryPage from "./pages/LibraryPage";
+import DashboardPage from "./pages/DashboardPage";
+import AppLayout from "./components/AppLayout";
+import PageNotFound from "./pages/PageNotFound";
+
 function App() {
-  return <div>hello React</div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="anime" element={<AnimePage />} />
+          <Route path="characters" element={<CharactersPage />} />
+          <Route path="favorites" element={<FavoritesPage />} />
+          <Route path="library" element={<LibraryPage />} />
+          <Route path="dashboard" element={<DashboardPage />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
