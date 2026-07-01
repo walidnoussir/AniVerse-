@@ -48,10 +48,25 @@ export const getAnime = createAsyncThunk(
   },
 );
 
+// get anime by id
+export const getAnimeById = createAsyncThunk(
+  "/anime/id",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${API_URL}/anime/${id}/full`);
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || error.message);
+    }
+  },
+);
+
 const initialState = {
   topAnime: [],
   seasonalAnime: [],
   allAnimes: [],
+  selectedAnime: null,
   isLoading: false,
   error: null,
 };
@@ -98,6 +113,20 @@ const animeSlice = createSlice({
       })
       .addCase(getAnime.rejected, (state, action) => {
         state.isLoading = false;
+        state.error = action.payload;
+      })
+      .addCase(getAnimeById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+
+      .addCase(getAnimeById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.selectedAnime = action.payload.data;
+      })
+
+      .addCase(getAnimeById.rejected, (state, action) => {
+        state.loading = false;
         state.error = action.payload;
       });
   },

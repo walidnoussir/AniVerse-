@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function Hero() {
+  const navigate = useNavigate();
+
   const scrollToTrending = () => {
     document.getElementById("trending")?.scrollIntoView({
       behavior: "smooth",
@@ -20,7 +24,10 @@ function Hero() {
         </p>
 
         <div className="flex gap-4 pr-2">
-          <button className="btn-primary w-full md:w-44 lg:w-60">
+          <button
+            className="btn-primary w-full md:w-44 lg:w-60"
+            onClick={() => navigate("/anime")}
+          >
             Explore Anime
           </button>
 

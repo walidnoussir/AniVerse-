@@ -32,7 +32,7 @@ function AnimePage() {
       <SearchFilter />
 
       <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-5">
-        {allAnimes.map((anime) => (
+        {allAnimes?.map((anime) => (
           <AnimeCard key={anime.mal_id} anime={anime} />
         ))}
       </div>
