@@ -7,6 +7,7 @@ import LibraryPage from "./pages/LibraryPage";
 import DashboardPage from "./pages/DashboardPage";
 import AppLayout from "./components/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
+import AnimeDetailsPage from "./pages/AnimeDetailsPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<AppLayout />}>
           <Route index element={<HomePage />} />
           <Route path="anime" element={<AnimePage />} />
+          <Route path="anime/:id" element={<AnimeDetailsPage />} />
           <Route path="characters" element={<CharactersPage />} />
           <Route path="favorites" element={<FavoritesPage />} />
           <Route path="library" element={<LibraryPage />} />

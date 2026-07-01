@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import SeasonalAnime from "../components/SeasonalAnime";
 import TrendingAnimes from "../components/TrendingAnimes";
 
 function HomePage() {
@@ -6,6 +7,7 @@ function HomePage() {
     <div>
       <Hero />
       <TrendingAnimes />
+      <SeasonalAnime />
     </div>
   );
 }

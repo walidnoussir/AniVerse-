@@ -5,7 +5,7 @@ import AnimeCard from "./AnimeCard";
 import Spinner from "./ui/Spinner";
 
 function TrendingAnimes() {
-  const { isLoading, error, animes } = useSelector((state) => state.anime);
+  const { isLoading, error, topAnime } = useSelector((state) => state.anime);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -13,16 +13,16 @@ function TrendingAnimes() {
   }, []);
 
   console.log(isLoading);
-  console.log(animes);
+  console.log(topAnime);
   console.log(error);
   if (isLoading) return <Spinner />;
 
-  const trendingAnime = animes?.slice(0, 6);
+  const trendingAnime = topAnime?.slice(0, 6);
 
   console.log(trendingAnime);
 
   return (
-    <div id="trending" className="py-6 px-4 space-y-5">
+    <div id="trending" className="py-6 px-4 space-y-8">
       <h2 className="text-text">Trending Anime</h2>
       <p>What's capturing everyone's attention right now.</p>
 
