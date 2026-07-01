@@ -125,12 +125,32 @@
 }
 
 @utility btn-primary {
-  @apply rounded-lg px-5 py-3 font-semibold text-black shadow-lg transition-all duration-300 hover:scale-105 active:scale-95;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
+  @apply inline-flex items-center justify-center
+    h-12
+    px-8
+    rounded-lg
+    font-medium
+    text-white
+    transition-all
+    duration-300
+    border
+    border-white/10;
+
+  background: linear-gradient(90deg, #6f67f8 0%, #8b5cf6 50%, #b155f7 100%);
+
+  box-shadow:
+    0 8px 24px rgba(139, 92, 246, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+@utility btn-primary-hover {
+  background: linear-gradient(90deg, #7b74ff 0%, #9768ff 50%, #bc63ff 100%);
+
+  box-shadow:
+    0 12px 32px rgba(139, 92, 246, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  transform: translateY(-2px);
 }
 
 @utility btn-secondary {
