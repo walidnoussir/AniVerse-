@@ -84,7 +84,7 @@ function AnimeDetailsPage() {
                 className="btn-secondary flex items-center justify-center gap-2"
                 onClick={addToFavorite}
               >
-                <Heart />
+                {/* <Heart /> */}
                 Favorite
               </button>
 

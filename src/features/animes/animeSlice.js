@@ -37,9 +37,15 @@ export const getSeasonalAnime = createAsyncThunk(
 // get all anime
 export const getAnime = createAsyncThunk(
   "/anime/",
-  async (_, { rejectWithValue }) => {
+  async ({ search = "", genre = "", type = "" }, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`${API_URL}/anime`);
+      const response = await axios.get(`${API_URL}/anime`, {
+        params: {
+          q: search,
+          genres: genre,
+          type,
+        },
+      });
 
       return response.data;
     } catch (error) {
