@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://api.jikan.moe/v4",
+  baseURL: "http://localhost:9000",
 });
 
 export default api;
