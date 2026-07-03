@@ -7,8 +7,33 @@
       "score": 8.75,
       "episodes": 26,
       "status": "Finished Airing"
+    },
+    {
+      "id": "55GHYEuRXa0",
+      "title": "Super no Ura de Yani Suu Futari",
+      "image": "https://cdn.myanimelist.net/images/anime/1768/156339l.jpg",
+      "score": 8.52,
+      "episodes": null,
+      "status": "Currently Airing"
+    },
+    {
+      "id": "SF_E78gAgbM",
+      "title": "Sousou no Frieren",
+      "image": "https://cdn.myanimelist.net/images/anime/1015/138006l.jpg",
+      "score": 9.26,
+      "episodes": 28,
+      "status": "Finished Airing"
     }
   ],
-  "library": [],
+  "library": [
+    {
+      "id": "D2d5vpLgZRA",
+      "title": "Trigun",
+      "image": "https://cdn.myanimelist.net/images/anime/1130/120002l.jpg",
+      "score": 8.22,
+      "episodes": 26,
+      "status": "Finished Airing"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -1,17 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { Heart, Star, BookmarkPlus } from "lucide-react";
+import { useNavigate, useParams } from "react-router-dom";
+import { Star, BookmarkPlus, MoveRight } from "lucide-react";
 
 import Spinner from "../components/ui/Spinner";
 import { getAnimeById } from "../features/animes/animeSlice";
 import {
   addFavoriteThunk,
-  fetchFavorites,
+  // fetchFavorites,
 } from "../features/favorites/favotiteSlice";
 import toast from "react-hot-toast";
+import { addToLibraryThunk } from "../features/library/librarySlice";
 
 function AnimeDetailsPage() {
+  const navigate = useNavigate();
+
   const { isLoading, error, selectedAnime } = useSelector(
     (state) => state.anime,
   );
@@ -21,7 +24,7 @@ function AnimeDetailsPage() {
 
   useEffect(() => {
     dispatch(getAnimeById(id));
-    dispatch(fetchFavorites());
+    // dispatch(fetchFavorites());
   }, []);
 
   if (isLoading) return <Spinner />;
@@ -43,23 +46,33 @@ function AnimeDetailsPage() {
   const image =
     anime.images?.webp?.large_image_url || anime.images?.jpg?.large_image_url;
 
-  const addToFavorite = async () => {
-    const favorite = {
-      id: anime.mal_id,
-      title: anime.title,
-      image: anime.images.jpg.large_image_url,
-      score: anime.score,
-      episodes: anime.episodes,
-      status: anime.status,
-    };
+  const animeInfos = {
+    id: anime.mal_id,
+    title: anime.title,
+    image: anime.images.jpg.large_image_url,
+    score: anime.score,
+    episodes: anime.episodes,
+    status: anime.status,
+  };
 
+  const addToFavorite = async () => {
     try {
-      await dispatch(addFavoriteThunk(favorite));
+      await dispatch(addFavoriteThunk(animeInfos));
       toast.success(`${anime.title} added to favorites`);
     } catch {
       toast.error("Failed to add favorite");
     }
   };
+
+  const addToLibrary = async () => {
+    try {
+      await dispatch(addToLibraryThunk(animeInfos));
+      toast.success(`${anime.title} added to library`);
+    } catch {
+      toast.error("Failed to add to library");
+    }
+  };
+
   return (
     <div className="page pb-20">
       <div className="section pt-10">
@@ -73,7 +86,10 @@ function AnimeDetailsPage() {
               />
             </div>
 
-            <button className="btn-primary w-full flex gap-2">
+            <button
+              className="btn-primary w-full flex gap-2"
+              onClick={addToLibrary}
+            >
               <BookmarkPlus size={20} />
               Add To Library
             </button>
@@ -91,6 +107,14 @@ function AnimeDetailsPage() {
               <button className="btn-secondary flex items-center justify-center gap-2">
                 <Star />
                 Rate
+              </button>
+
+              <button
+                className="btn-secondary col-span-2 flex justify-center items-center gap-2"
+                onClick={() => navigate(`/anime/${anime.mal_id}/characters`)}
+              >
+                View All Characters
+                <MoveRight />
               </button>
             </div>
           </div>

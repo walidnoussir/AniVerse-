@@ -68,10 +68,59 @@ export const getAnimeById = createAsyncThunk(
   },
 );
 
+// get anime characters by id
+export const getAnimeCharacters = createAsyncThunk(
+  "anime/id/characters",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${API_URL}/anime/${id}/characters`);
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || error.message);
+    }
+  },
+);
+
+// get character profile
+export const getCharacterProfile = createAsyncThunk(
+  "/anime/characterProfile",
+  async (id, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${API_URL}/characters/${id}/full`);
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || error.message);
+    }
+  },
+);
+
+// get all characters
+export const getAllCharacters = createAsyncThunk(
+  "/anime/characters",
+  async ({ search = "" }, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${API_URL}/characters`, {
+        params: {
+          q: search,
+        },
+      });
+
+      return response.data;
+    } catch (error) {
+      return rejectWithValue(error.response?.data?.message || error.message);
+    }
+  },
+);
+
 const initialState = {
   topAnime: [],
   seasonalAnime: [],
   allAnimes: [],
+  animeCharacters: [],
+  characterProfile: null,
+  allCharacters: [],
   selectedAnime: null,
   isLoading: false,
   error: null,
@@ -133,6 +182,51 @@ const animeSlice = createSlice({
 
       .addCase(getAnimeById.rejected, (state, action) => {
         state.loading = false;
+        state.error = action.payload;
+      })
+
+      .addCase(getAnimeCharacters.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+
+      .addCase(getAnimeCharacters.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.animeCharacters = action.payload.data;
+      })
+
+      .addCase(getAnimeCharacters.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+
+      .addCase(getCharacterProfile.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+
+      .addCase(getCharacterProfile.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.characterProfile = action.payload.data;
+      })
+
+      .addCase(getCharacterProfile.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      })
+
+      .addCase(getAllCharacters.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+
+      .addCase(getAllCharacters.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.allCharacters = action.payload.data;
+      })
+
+      .addCase(getAllCharacters.rejected, (state, action) => {
+        state.isLoading = false;
         state.error = action.payload;
       });
   },
