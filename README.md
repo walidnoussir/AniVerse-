@@ -41,15 +41,19 @@
 
 **Frontend**
 
-| Technology          | Purpose                 |
-| ------------------- | ----------------------- |
-| ⚛️ React.js         | Core UI library         |
-| 🧠 Redux Toolkit    | Global state management |
-| 🧭 React Router DOM | Client-side routing     |
-| 🌐 Axios            | HTTP requests           |
-| 🎨 Tailwind CSS v4  | Utility-first styling   |
-| 🖼️ Lucide React     | Icon library            |
-| 🔥 React Hot Toast  | Toast notifications     |
+| Technology                | Purpose                      |
+| ------------------------- | ---------------------------- |
+| ⚛️ React.js 19            | Core UI library              |
+| 🧠 Redux Toolkit          | Global state management      |
+| ⚡ TanStack Query         | Server state & data fetching |
+| 🧭 React Router DOM       | Client-side routing          |
+| 🌐 Axios                  | HTTP requests                |
+| 🎨 Tailwind CSS v4        | Utility-first styling        |
+| 🖼️ Lucide React           | Icon library                 |
+| 🔥 React Hot Toast        | Toast notifications          |
+| 📝 React Hook Form        | Form state & validation      |
+| 💀 React Loading Skeleton | Skeleton loading states      |
+| 📊 Recharts               | Data visualization & charts  |
 
 **Backend**
 
@@ -145,7 +149,9 @@ AniVerse/
 | ------------------------------------------- | --------------------------------------------------------- |
 | ![Characters](./screenshots/characters.png) | ![Character Profile](./screenshots/character-profile.png) |
 
-| Library | | ------------------------------------ | ![Library](./screenshots/library.png) |
+| Favorites                                 | Library                               |
+| ----------------------------------------- | ------------------------------------- |
+| ![Favorites](./screenshots/favorites.png) | ![Library](./screenshots/library.png) |
 
 ---
 
@@ -174,13 +180,13 @@ npm run dev
 **2️⃣ Run the Backend**
 
 ```bash
-npx json-server db.json
+npm run server
 ```
 
 | Service                  | URL                     | Port   |
 | ------------------------ | ----------------------- | ------ |
 | 🖥️ Frontend (Vite)       | `http://localhost:5173` | `5173` |
-| 🗄️ Backend (JSON Server) | `http://localhost:3000` | `3000` |
+| 🗄️ Backend (JSON Server) | `http://localhost:9000` | `9000` |
 
 > ⚠️ Make sure both servers are running for Favorites and Library features to work correctly.
 
@@ -240,6 +246,6 @@ If you like **AniVerse**, consider giving it a ⭐ on GitHub — it really helps
 
 <div align="center">
 
-**Made with ❤️ and lots of ☕ by Walid Nasser**
+**Made with ❤️ and lots of ☕ by Walid Noussir**
 
 </div>
