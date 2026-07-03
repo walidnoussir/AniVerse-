@@ -1,37 +1,41 @@
 {
   "favorites": [
     {
-      "id": "s_P7UQvq5O4",
-      "title": "Cowboy Bebop",
-      "image": "https://cdn.myanimelist.net/images/anime/4/19644l.jpg",
-      "score": 8.75,
-      "episodes": 26,
-      "status": "Finished Airing"
-    },
-    {
-      "id": "55GHYEuRXa0",
-      "title": "Super no Ura de Yani Suu Futari",
-      "image": "https://cdn.myanimelist.net/images/anime/1768/156339l.jpg",
-      "score": 8.52,
-      "episodes": null,
-      "status": "Currently Airing"
-    },
-    {
-      "id": "SF_E78gAgbM",
-      "title": "Sousou no Frieren",
-      "image": "https://cdn.myanimelist.net/images/anime/1015/138006l.jpg",
-      "score": 9.26,
-      "episodes": 28,
+      "id": "z2QpuSaQ7_s",
+      "malId": 19,
+      "title": "Monster",
+      "image": "https://cdn.myanimelist.net/images/anime/10/18793l.jpg",
+      "score": 8.89,
+      "episodes": 74,
       "status": "Finished Airing"
     }
   ],
   "library": [
     {
-      "id": "D2d5vpLgZRA",
-      "title": "Trigun",
-      "image": "https://cdn.myanimelist.net/images/anime/1130/120002l.jpg",
-      "score": 8.22,
-      "episodes": 26,
+      "id": "WNnaT5jbHYM",
+      "malId": 19,
+      "title": "Monster",
+      "image": "https://cdn.myanimelist.net/images/anime/10/18793l.jpg",
+      "score": 8.89,
+      "episodes": 74,
+      "status": "Finished Airing"
+    },
+    {
+      "id": "lye4GarRwFk",
+      "malId": 21,
+      "title": "One Piece",
+      "image": "https://cdn.myanimelist.net/images/anime/1244/138851l.jpg",
+      "score": 8.73,
+      "episodes": null,
+      "status": "Currently Airing"
+    },
+    {
+      "id": "Y_gSucFCGZA",
+      "malId": 20,
+      "title": "Naruto",
+      "image": "https://cdn.myanimelist.net/images/anime/1141/142503l.jpg",
+      "score": 8.02,
+      "episodes": 220,
       "status": "Finished Airing"
     }
   ],

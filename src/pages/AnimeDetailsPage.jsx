@@ -19,6 +19,9 @@ function AnimeDetailsPage() {
     (state) => state.anime,
   );
 
+  const { favorites } = useSelector((state) => state.favorites);
+  const { library } = useSelector((state) => state.library);
+
   const dispatch = useDispatch();
   const { id } = useParams();
 
@@ -46,8 +49,11 @@ function AnimeDetailsPage() {
   const image =
     anime.images?.webp?.large_image_url || anime.images?.jpg?.large_image_url;
 
+  console.log(anime.mal_id);
+
   const animeInfos = {
     id: anime.mal_id,
+    malId: anime.mal_id,
     title: anime.title,
     image: anime.images.jpg.large_image_url,
     score: anime.score,
@@ -56,6 +62,13 @@ function AnimeDetailsPage() {
   };
 
   const addToFavorite = async () => {
+    const exists = favorites.find((fav) => fav.malId === anime.mal_id);
+
+    if (exists) {
+      toast.error(`${anime.title} is already in your favorites`);
+      return;
+    }
+
     try {
       await dispatch(addFavoriteThunk(animeInfos));
       toast.success(`${anime.title} added to favorites`);
@@ -65,6 +78,13 @@ function AnimeDetailsPage() {
   };
 
   const addToLibrary = async () => {
+    const exists = library.find((lib) => lib.malId === anime.mal_id);
+
+    if (exists) {
+      toast.error(`${anime.title} is already in your library`);
+      return;
+    }
+
     try {
       await dispatch(addToLibraryThunk(animeInfos));
       toast.success(`${anime.title} added to library`);

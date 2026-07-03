@@ -7,7 +7,7 @@ const links = [
   { name: "Anime", path: "/anime" },
   { name: "Characters", path: "/characters" },
   { name: "Favorites", path: "/favorites" },
-  { name: "Library", path: "/my-library" },
+  { name: "Library", path: "/library" },
   { name: "Dashboard", path: "/dashboard" },
 ];
 
