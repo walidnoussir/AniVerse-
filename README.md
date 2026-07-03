@@ -145,9 +145,7 @@ AniVerse/
 | ------------------------------------------- | --------------------------------------------------------- |
 | ![Characters](./screenshots/characters.png) | ![Character Profile](./screenshots/character-profile.png) |
 
-| Favorites                                 | Library                               |
-| ----------------------------------------- | ------------------------------------- |
-| ![Favorites](./screenshots/favorites.png) | ![Library](./screenshots/library.png) |
+| Library | | ------------------------------------ | ![Library](./screenshots/library.png) |
 
 ---
 
@@ -227,12 +225,12 @@ AniVerse follows a custom, cohesive design system built for a premium anime brow
 
 ## 👨‍💻 Author
 
-**Walid Nasser**
+**Walid Noussir**
 _Full Stack JavaScript Developer_
 
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/your-profile)
-[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://your-portfolio.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/walidnoussir)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/walidnoussir/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://walidnoussirportfolio.vercel.app/)
 
 ---
 
